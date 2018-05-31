@@ -4,37 +4,37 @@ CREATE DATABASE project_db;
 
 USE project_db;
 
-CREATE TABLE user(
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(200) NOT NULL,
-    PRIMARY KEY (id);
-)
+-- CREATE TABLE user(
+--     id INT NOT NULL AUTO_INCREMENT,
+--     name VARCHAR(100) NOT NULL,
+--     email VARCHAR(200) NOT NULL,
+--     PRIMARY KEY (id)
+-- );
 
-CREATE TABLE javascript_cards(
+CREATE TABLE Jscards(
     id INT NOT NULL AUTO_INCREMENT,
     question VARCHAR (250) NOT NULL,
     hint VARCHAR(200) NOT NULL,
     answer VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    PRIMARY KEY (id)
+    -- FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
-CREATE TABLE html_cards(
+CREATE TABLE Htmlcards(
     id INT NOT NULL AUTO_INCREMENT,
     question VARCHAR (250) NOT NULL,
     hint VARCHAR(200) NOT NULL,
     answer VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    PRIMARY KEY (id)
+    -- FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
-CREATE TABLE css_cards(
+CREATE TABLE Csscards(
     id INT NOT NULL AUTO_INCREMENT,
     question VARCHAR (250) NOT NULL,
     hint VARCHAR(200) NOT NULL,
     answer VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    PRIMARY KEY (id)
+    -- FOREIGN KEY (user_id) REFERENCES user(id)
 );
 

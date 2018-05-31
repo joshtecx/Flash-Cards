@@ -1,22 +1,27 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const cookieParser = require("cookie-parser");
-const mainRoutes = require("./routes/mainRoutes.js");
-const cardRoutes = require("./routes/cardsRoutes.js");
-
+const db = require("./models");
+const path = require("path");
+const jsroutes = require("./routes/jsCardRoutes.js");
+const htmlroutes = require("./routes/htmlCardRoutes.js");
+const cssroutes = require("./routes/cssCardRoutes.js");
+const app = express();
 const PORT = 3000;
 
-const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
 app.use(express.static("public"));
 
-app.set("view engine", "pug");
+// app.set("view engine", "pug");
 
-app.use(mainRoutes);
-app.use("/cards", cardRoutes);
+app.use(jsroutes);
+app.use(htmlroutes);
+app.use(cssroutes);
+// app.use("/cards", cardRoutes);
 
-app.listen(PORT, function(){
-    console.log("app is now listening on port: " + PORT);
+db.sequelize.sync({ force: false }).then(function() {
+    app.listen(PORT, function(){
+        console.log("app is now listening on port: " + PORT);
+    });
 });
+
