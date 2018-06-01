@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const jsCardRoutes = require('./routes/jsCardRoutes.js');
 const htmlCardRoutes = require('./routes/htmlCardRoutes.js');
 const cssCardRoutes = require('./routes/cssCardRoutes.js');
+const db = require("./models");
 
 const PORT = 3000;
 
@@ -17,8 +18,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 
-app.use('/', routes);
-app.use('/cards', cardRoutes);
+// app.use('/', routes);
+// app.use('/cards', cardRoutes);
 app.use(jsCardRoutes);
 app.use(htmlCardRoutes);
 app.use(cssCardRoutes);
