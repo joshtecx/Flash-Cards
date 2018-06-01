@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const jsCardRoutes = require('./routes/jsCardRoutes.js');
 const htmlCardRoutes = require('./routes/htmlCardRoutes.js');
-const cssCardRoutes = require('./routes/cssCardRoutes.js');
+const cardRouter = require('./routes/cssCardRoutes.js');
+const htmlRoutes = require('./routes/htmlRoutes.js');
 const db = require('./models');
 
 const PORT = 3000;
@@ -19,11 +20,12 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// app.use('/', routes);
-// app.use('/cards', cardRoutes);
-app.use(jsCardRoutes);
-app.use(htmlCardRoutes);
-app.use(cssCardRoutes);
+//app.use('/', routes);
+// app.use('/cards', cardRoutes)
+app.use('/', htmlRoutes);
+//app.use('/js', jsCardRoutes);
+//app.use('html', htmlCardRoutes);
+//app.use(cardRouter);
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
