@@ -11,7 +11,7 @@ var MongoStore = require('connect-mongo')(session);
 //   useMongoClient: true,
 // });
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/test', {
+mongoose.connect('mongodb://localhost/FClogin', {
   useMongoClient: true,
 });
 var db = mongoose.connection;
