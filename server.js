@@ -1,27 +1,26 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const db = require("./models");
-const path = require("path");
-const jsroutes = require("./routes/jsCardRoutes.js");
-const htmlroutes = require("./routes/htmlCardRoutes.js");
-const cssroutes = require("./routes/cssCardRoutes.js");
-const app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const exphbs = require('express-handlebars');
+const jsCardRoutes = require('./routes/jsCardRoutes.js');
+const htmlCardRoutes = require('./routes/htmlCardRoutes.js');
+const cssCardRoutes = require('./routes/cssCardRoutes.js')
+
 const PORT = 3000;
 
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static("public"));
 
-// app.set("view engine", "pug");
+app.use(express.static('public'));
 
-app.use(jsroutes);
-app.use(htmlroutes);
-app.use(cssroutes);
-// app.use("/cards", cardRoutes);
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
-db.sequelize.sync({ force: false }).then(function() {
-    app.listen(PORT, function(){
-        console.log("app is now listening on port: " + PORT);
-    });
+
+app.use('/', routes);
+app.use('/cards', cardRoutes);
+
+app.listen(PORT, function() {
+  console.log('app is now listening on port: ' + PORT);
 });
-
