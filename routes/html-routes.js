@@ -4,14 +4,16 @@ const path = require('path');
 const db = require('../models');
 
 router.get('/', function(req, res) {
-  res.render('views/index.handlebars');
+  res.render('index');
 });
 router.get('/create', function(req, res) {
-  res.render('views/create.handlebars');
+  res.render('create.handlebars');
 });
-router.get('view', function(req, res) {
-  res.render('views/view.handlebars');
+router.get('/view', function(req, res) {
+  res.render('view.handlebars');
 });
 router.get('/play', function(req, res) {
-  res.render('views/play.handlebars');
+  res.render('play.handlebars');
 });
+
+module.exports = router;
