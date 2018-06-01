@@ -4,37 +4,19 @@ CREATE DATABASE project_db;
 
 USE project_db;
 
-CREATE TABLE user(
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(200) NOT NULL,
-    PRIMARY KEY (id);
-)
 
-CREATE TABLE javascript_cards(
+CREATE TABLE Decks(
     id INT NOT NULL AUTO_INCREMENT,
+    deck_name VARCHAR(200) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Cards(
+    id INT NOT NULL AUTO_INCREMENT,
+    deck_id INT NOT NULL,
     question VARCHAR (250) NOT NULL,
     hint VARCHAR(200) NOT NULL,
     answer VARCHAR(250) NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    FOREIGN KEY (deck_id) REFERENCES Decks(id);
 );
-
-CREATE TABLE html_cards(
-    id INT NOT NULL AUTO_INCREMENT,
-    question VARCHAR (250) NOT NULL,
-    hint VARCHAR(200) NOT NULL,
-    answer VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
-);
-
-CREATE TABLE css_cards(
-    id INT NOT NULL AUTO_INCREMENT,
-    question VARCHAR (250) NOT NULL,
-    hint VARCHAR(200) NOT NULL,
-    answer VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
-);
-

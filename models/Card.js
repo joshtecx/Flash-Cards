@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes){
-    var Htmlcard = sequelize.define("Htmlcard",{ 
+    var Card = sequelize.define("Card",{ 
+        deck_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         question: {
             type: DataTypes.STRING,
             allowNull: false
@@ -15,5 +19,5 @@ module.exports = function(sequelize, DataTypes){
     }, {
         timestamps: false
     });
-    return Htmlcard;
+    return Card;
 };
