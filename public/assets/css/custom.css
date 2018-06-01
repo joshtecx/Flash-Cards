@@ -1,0 +1,117 @@
+body {
+  background: url('../images/backflip-1920.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/*title page flip card style and animation*/
+.title-card {
+  background: rgba(211, 211, 211, 0.507);
+  height: 550px;
+  margin-top: 7em;
+  border: 5px solid black;
+}
+.card-flip {
+  perspective: 1000px;
+}
+.card-flip:hover .flip,
+.card-flip.hover .flip {
+  transform: rotateY(180deg);
+}
+.card-flip,
+.front,
+.back {
+  width: 100%;
+  height: 480px;
+}
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.back {
+  transform: rotateY(180deg);
+}
+
+/*title card logo and text styles*/
+#flip-title {
+  font-family: 'Freckle Face', cursive;
+  color: orangered;
+  font-size: 8em;
+  padding: 0;
+  margin: 0;
+}
+#over-title {
+  font-family: 'Freckle Face', cursive;
+  color: orangered;
+  font-size: 8em;
+  padding: 0;
+  margin: 0;
+  transform: scale(1, -1);
+}
+.flip-body {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.flip-body2 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#card-body-back {
+  margin-top: 8em;
+}
+
+/*create deck card and text styles*/
+#create-deck {
+  background: orangered;
+  margin-top: 5em;
+  border: 5px solid black;
+}
+#instructions {
+  font-size: 1.25em;
+}
+h2 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: bold;
+}
+
+/*view deck card and text styles*/
+#view-deck {
+  background: rgba(211, 211, 211);
+  margin-top: 5em;
+  border: 5px solid black;
+}
+thead {
+  color: orangered;
+  font-size: 1.25em;
+}
+
+/*flash card and text styles*/
+.flash-card {
+  background: rgba(211, 211, 211);
+  margin-top: 10em;
+  border: 5px solid black;
+  height: 20em;
+}
+.flash-body {
+  margin-top: 5em;
+}
+.flash-title {
+  color: orangered;
+  font-size: 2em;
+}
+.flash-text {
+  font-size: 1.25em;
+}
