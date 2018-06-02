@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">flip'D over</a>
+    <a class="navbar-brand" href="/">flip'D over</a>
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">Create Deck</a>
+            <a class="nav-link" href="/create">Create Deck</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">View Decks</a>
+            <a class="nav-link" href="/view">View Decks</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Play Deck</a>
+            <a class="nav-link" href="/play">Play Deck</a>
         </li>
     </ul>
 </nav>
@@ -26,12 +26,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each Decks}}
                             <tr>
-                                <td>HTML</td>
+                                <td>{{this.deck_name}}</td>
                                 <td>
                                     <button></button>
                                 </td>
                             </tr>
+                            {{/each}}
                         </tbody>
                     </table>
 
