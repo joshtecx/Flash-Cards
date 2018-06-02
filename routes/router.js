@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
-
+const path = require('path');
+const db = require('../models');
 
 // GET route for reading data
 router.get('/', function (req, res, next) {
-  return res.sendFile(path.join(__dirname + '/views/index.html'));
+  return res.sendFile(path.join(__dirname + '/views/index'));
 });
 
 
@@ -40,10 +41,10 @@ router.post('/', function (req, res, next) {
       }
     });
 
-  } else if (req.body.logemail && req.body.logpassword) {
-    User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
+  } else if (req.body.logusername && req.body.logpassword) {
+    User.authenticate(req.body.logusername, req.body.logpassword, function (error, user) {
       if (error || !user) {
-        var err = new Error('Wrong email or password.');
+        var err = new Error('Wrong username or password.');
         err.status = 401;
         return next(err);
       } else {
@@ -70,7 +71,7 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+          return res.render('view.handlebars')
         }
       }
     });
