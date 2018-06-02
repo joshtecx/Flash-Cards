@@ -26,12 +26,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each Decks}}
                             <tr>
-                                <td>HTML</td>
+                                <td>{{this.deck_name}}</td>
                                 <td>
                                     <button></button>
                                 </td>
                             </tr>
+                            {{/each}}
                         </tbody>
                     </table>
 
