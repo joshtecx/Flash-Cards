@@ -15,21 +15,22 @@
 <div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+            {{#each Cards}}
             <div class="carousel-item active">
                 <div class="card-flip">
                     <div class="flip">
                         <div class="front">
                             <div class="card text-center flash-card">
                                 <div class="card-body flash-body">
-                                    <h2 id="flash-title">Question</h2>
-                                    <p id="flash-text">hint</p>
+                                    <h2 id="flash-title">{{this.question}}</h2>
+                                    <p id="flash-text">{{this.hint}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="back">
                             <div class="card text-center flash-card">
                                 <div class="card-body flash-body">
-                                    <h2 class="flash-title">answer</h2>
+                                    <h2 class="flash-title">{{this.answer}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -37,12 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-            </div>
+            {{/each}}
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

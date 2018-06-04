@@ -87,15 +87,26 @@ router.get('/api/cards', function(req, res) {
   });
 });
 
-router.get('/api/cards/:id', function(req, res) {
-  db.Card.findOne({
+router.get('/api/cards/:deck_name', function(req, res) {
+  db.Card.findAll({
     where: {
-      id: req.params.id
+      deck_name: req.params.deck_name
     }
   }).then(function(result) {
     res.json(result);
+    //res.redirect('/play');
   });
 });
+
+// router.get('/api/cards/:id', function(req, res) {
+//   db.Card.findOne({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function(result) {
+//     res.json(result);
+//   });
+//});
 
 router.post('/api/cards', function(req, res) {
 

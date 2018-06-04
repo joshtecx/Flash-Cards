@@ -1,3 +1,4 @@
+<<<<<<< ce8a2ab0d2c2fcb6fcd3dc08b37e5cc170bb58d3
 module.exports = function(sequelize, DataTypes){
     var Card = sequelize.define("Card",{ 
         deck_name: {
@@ -69,3 +70,32 @@ module.exports = function(sequelize, DataTypes){
     });
     return Card;
 };
+=======
+module.exports = function(sequelize, DataTypes) {
+  var Card = sequelize.define(
+    'Card',
+    {
+      deck_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      question: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      hint: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      answer: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
+    },
+    {
+      timestamps: false
+    }
+  );
+  return Card;
+};
+>>>>>>> update create
