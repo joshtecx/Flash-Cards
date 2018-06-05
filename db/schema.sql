@@ -5,10 +5,16 @@ CREATE DATABASE project_db;
 USE project_db;
 
 
-CREATE TABLE Decks(
-    -- id INT NOT NULL AUTO_INCREMENT,
-    deck_name VARCHAR(200) NOT NULL,
-    PRIMARY KEY (deck_name)
+CREATE TABLE Decks
+(
+    id INT NOT NULL
+    AUTO_INCREMENT,
+    deck_name VARCHAR
+    (200) NOT NULL,
+    PRIMARY KEY
+    (id),
+    UNIQUE
+    (deck_name)
 );
 
 CREATE TABLE Cards(
@@ -30,6 +36,6 @@ CREATE TABLE Cards(
     hint5 VARCHAR(200) ,
     answer5 VARCHAR(250) ,
     
-    PRIMARY KEY (id),
-    FOREIGN KEY (deck_name) REFERENCES Decks(deck_name)
+    PRIMARY KEY(id),
+    FOREIGN KEY (deck_name) REFERENCES Deck (deck_name)
 );
