@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">flip'D over</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/create">Create Deck</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/view">View Decks</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/play">Play Deck</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="card" id="create-deck">
+                <div class="card-body">
+                    <p id="instructions">Create your own deck of study flash-cards by entering a subject and then five questions, each with a
+                        hint and an answer. You can choose to play your deck or another one from the view decks page.</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="subject">
+                                <h2>Subject</h2>
+                            </label>
+                            <input type="text" class="form-control" id="subject" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="question1">
+                                <h3>Question 1</h3>
+                            </label>
+                            <input type="text" class="form-control" id="question1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hint1" placeholder="Hint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="answer1" placeholder="Answer">
+                        </div>
+                        <div class="form-group">
+                            <label for="question2">
+                                <h3>Question 2</h3>
+                            </label>
+                            <input type="text" class="form-control" id="question2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hint2" placeholder="Hint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="answer2" placeholder="Answer">
+                        </div>
+                        <div class="form-group">
+                            <label for="question3">
+                                <h3>Question 3</h3>
+                            </label>
+                            <input type="text" class="form-control" id="question3" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hint3" placeholder="Hint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="answer3" placeholder="Answer">
+                        </div>
+                        <div class="form-group">
+                            <label for="question4">
+                                <h3>Question 4</h3>
+                            </label>
+                            <input type="text" class="form-control" id="question4" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hint4" placeholder="Hint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="answer4" placeholder="Answer">
+                        </div>
+                        <div class="form-group">
+                            <label for="question5">
+                                <h3>Question 5</h3>
+                            </label>
+                            <input type="text" class="form-control" id="question5" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hint5" placeholder="Hint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="answer5" placeholder="Answer">
+                        </div>
+                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">flip'D over</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/create">Create Deck</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/view">View Decks</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/play">Play Deck</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="card" id="view-deck">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each Decks}}
+                            <tr>
+                                <td>{{this.deck_name}}</td>
+                                <td class="text-center">
+                                    <form class="get-deck" action="api/cards/{{this.deck_name}}?_method=GET" method="GET">
+                                        <input id="deck" type="hidden" value={{this.deck_name}}>
+                                        <button class="btn btn-primary" id="play-deck" type="submit">Play Deck</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
