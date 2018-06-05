@@ -15,5 +15,7 @@ router.get('/view', function(req, res) {
 router.get('/play', function(req, res) {
   res.render('play.handlebars');
 });
-
+router.get('/logout', function(req, res) {
+  res.render('index');
+});
 module.exports = router;

@@ -105,4 +105,14 @@ router.delete("/api/cards/:id", function(req, res){
     });
 });
 
+// Routes for finding the user
+router.get('/user/:userId', function (req, res, next) {
+    // find user in database
+    db.User.findOne({
+      id: req.params.userId
+    }).then(function (user) {
+      // respond
+      res.status(200).json(user);
+    }).catch(next);
+  });
 module.exports= router;

@@ -5,7 +5,7 @@
             <a class="nav-link" href="/create">Create Deck</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/view">View Decks</a>
+            <a class="nav-link" href="/profile">View Decks</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/play">Play Deck</a>
@@ -41,7 +41,7 @@
                                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
 
-                                    <form class="modal-content animate" action="/" method="post">
+                                    <form class="modal-content animate" action="/auth/sign-in" method="post">
                                         {{!-- <div class="imgcontainer">
                                             <img src="img_avatar2.png" alt="Avatar" class="avatar">
                                         </div> --}}
@@ -58,7 +58,7 @@
                                             <input type="password" placeholder="Enter Password" name="logpassword" required="">
 
                                             <div class="tp">
-                                                <input type="submit" value="LOGIN NOW">
+                                                <button type="submit" value="LOGIN NOW">Log In</button>
                                             </div>
                                         </div>
 
@@ -75,7 +75,7 @@
 
                                 <div id="id02" class="modal2">
                                     <span onclick="document.getElementById('id02').style.display='none'" class="close2" title="Close Modal">&times;</span>
-                                    <form class="modal-content2" action="/" method="post">
+                                    <form class="modal-content2" action="/auth/sign-up" method="post">
                                         <div class="container">
                                             <h1>Sign Up</h1>
                                             <p>Please fill in this form to create an account.</p>

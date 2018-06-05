@@ -1,1 +1,0 @@
-need to see if we can inculde mysql and mongodb in the same files. May be we can create an author table in mysql when we register, then have the other database tables be associated with each other.

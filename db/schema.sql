@@ -20,3 +20,11 @@ CREATE TABLE Cards(
     PRIMARY KEY (id),
     FOREIGN KEY (deck_id) REFERENCES Decks(id);
 );
+ CREATE TABLE User(
+     id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(200) NOT NULL,
+    username VARCHAR(200) NOT NULL,
+    password VARCHAR(200) NOT NULL,
+    passwordConf VARCHAR(200) NOT NULL,
+    PRIMARY KEY (id)
+ )
