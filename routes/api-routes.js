@@ -94,22 +94,20 @@ router.get('/api/cards/:deck_name', function(req, res) {
     }
   }).then(function(result) {
     res.json(result);
-    //res.redirect('/play');
   });
 });
 
-// router.get('/api/cards/:id', function(req, res) {
-//   db.Card.findOne({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(result) {
-//     res.json(result);
-//   });
-//});
+router.get('/api/cards/:id', function(req, res) {
+  db.Card.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(result) {
+    res.json(result);
+  });
+});
 
 router.post('/api/cards', function(req, res) {
-
   db.Card.create({
     deck_name: req.body.deck_name,
     question: req.body.question,
@@ -131,8 +129,6 @@ router.post('/api/cards', function(req, res) {
     res.json(result);
   });
 });
-
-
 
 // WE WERE NOT ABLE TO WORK WITH THESE YET
 // ====================================================

@@ -101,9 +101,14 @@ thead {
 }
 
 /*flash card and text styles*/
+#play-title {
+  margin-top: 7em;
+  background: orangered;
+  font-weight: bold;
+}
 .flash-card {
   background: rgba(211, 211, 211);
-  margin-top: 10em;
+  margin-top: 5em;
   border: 5px solid black;
   height: 20em;
 }
