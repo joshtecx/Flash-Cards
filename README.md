@@ -12,7 +12,12 @@ Josh Tec
 
 ## Overview
 
-    This app will allow the user to create ‘decks’ of study flash-cards that they can share with other users. The user will begin by selecting a topic/subject for their deck. They will then enter the questions and answers to create their flash-cards. Each deck will contain a maximum of 10 cards. The user will also have the option to update or delete their deck. The user can select to see all of the decks available to play and choose one of theirs or another user’s. Each deck will be stored as a table in the database with an association to that user.
+    This app will allow the user to create ‘decks’ of study flash-cards that they can share with other users. 
+    The user will begin by selecting a topic/subject for their deck. They will then enter the questions and 
+    answers to create their flash-cards. Each deck will contain a maximum of 10 cards. The user will also have 
+    the option to update or delete their deck. The user can select to see all of the decks available to play and 
+    choose one of theirs or another user’s. Each deck will be stored as a table in the database with an association
+    to that user.
 
 1.  Title/Landing page with menu navigation
 2.  Sign up/Log in page or modal - authenticate and create user data table
