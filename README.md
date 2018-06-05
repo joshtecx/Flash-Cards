@@ -5,7 +5,9 @@ https://pacific-lake-65040.herokuapp.com/
 ## Group members
 
 John Waymire
+
 Daniel Seoh
+
 Josh Tec
 
 ## Overview
