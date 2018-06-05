@@ -93,7 +93,7 @@ router.get('/api/cards/:deck_name', function(req, res) {
       deck_name: req.params.deck_name
     }
   }).then(function(result) {
-    res.json(result);
+    res.render("play", result);
   });
 });
 
