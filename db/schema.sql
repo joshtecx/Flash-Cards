@@ -12,7 +12,6 @@ CREATE TABLE Decks(
 );
 
 CREATE TABLE Cards(
-    CREATE TABLE Cards(
     id INT NOT NULL AUTO_INCREMENT,
     deck_name VARCHAR(200) NOT NULL,
     question VARCHAR (250) ,
