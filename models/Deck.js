@@ -7,14 +7,14 @@ module.exports = function(sequelize, DataTypes){
     },{
         timestamps: false
     });
-    Deck.associate = function(models) {
-        //deck should belong to user
-        //deck cannot be created without a user
-        Deck.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Deck.associate = function(models) {
+    //     //deck should belong to user
+    //     //deck cannot be created without a user
+    //     Deck.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
     return Deck;
 };

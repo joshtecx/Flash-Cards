@@ -37,7 +37,7 @@ CREATE TABLE Cards(
     answer5 VARCHAR(250) ,
     
     PRIMARY KEY(id),
-    FOREIGN KEY (deck_name) REFERENCES Deck (deck_name)
+    FOREIGN KEY (deck_name) REFERENCES Decks (deck_name)
 );
  CREATE TABLE User(
      id INT NOT NULL AUTO_INCREMENT,

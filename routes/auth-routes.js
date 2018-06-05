@@ -15,7 +15,7 @@ authRouter.get('/sign-in', function (req, res) {
 authRouter.post("/sign-up", function(req, res) {
   bcrypt.genSalt(10, function(err, salt) {
     if (err) {
-      res.render('profile', {
+      res.render('view', {
         status: 'Unable to create username with password provided',
         error: err
       })
@@ -29,10 +29,10 @@ authRouter.post("/sign-up", function(req, res) {
           passwordConf: hash
         })
           .then(function() {
-            res.redirect('/auth/profile')
+            res.redirect('/auth/view')
           })
           .catch(function (err) {
-            res.render('profile', {
+            res.render('view', {
               status: 'Unable to create username with password provided',
               error: err
             })
@@ -47,7 +47,7 @@ authRouter.get('/sign-in', function (req, res, next) {
   if (req.user) {
     res.redirect('/')
   } else {
-    res.render('profile', { status: 'Enter your username and password'});
+    res.render('view', { status: 'Enter your username and password'});
   }
 });
 
@@ -58,11 +58,11 @@ authRouter.post("/sign-in", function(req, res, next) {
     .then(function(user) {
       if (!user) {
         console.log('no user found');
-        res.render('profile', { status: 'Username or password is incorrect' })
+        res.render('view', { status: 'Username or password is incorrect' })
       } else {
         bcrypt.compare(req.body.password, user.password, function(err, valid) {
           if (err || !valid) {
-            res.render('profile', { status: 'Username or password is incorrect' })
+            res.render('view', { status: 'Username or password is incorrect' })
           } else {
             // create JWT token
             var jwtAuthToken = jwt.sign({

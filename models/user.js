@@ -24,13 +24,13 @@ module.exports = function (sequelize, DataTypes) {
   }, {
       timestamps: false
     });
-    User.associate = function(models) {
-      // Associating User with Deckss
-      // When an User is deleted, also delete any associated Decks
-      User.hasMany(models.Deck, {
-        onDelete: "cascade"
-      });
-    };
+    // User.associate = function(models) {
+    //   // Associating User with Deckss
+    //   // When an User is deleted, also delete any associated Decks
+    //   User.hasMany(models.Deck, {
+    //     onDelete: "cascade"
+    //   });
+    // };
   return User;
   }
   

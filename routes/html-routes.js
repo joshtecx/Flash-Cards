@@ -9,8 +9,8 @@ router.get('/', function(req, res) {
 router.get('/create', function(req, res) {
   res.render('create.handlebars');
 });
-router.get('/profile', function(req, res) {
-  res.render('profile.handlebars');
+router.get('/view', function(req, res) {
+  res.render('view.handlebars');
 });
 router.get('/play', function(req, res) {
   res.render('play.handlebars');

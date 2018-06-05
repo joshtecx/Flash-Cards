@@ -5,7 +5,7 @@ var express = require('express');
 var userRouter = express.Router();
 
 userRouter.get('/', function (req, res) {
-  res.render('profile', { user: req.user })
+  res.render('view', { user: req.user })
 });
 
 // Routes
