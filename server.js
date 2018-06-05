@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const apiRouter = require('./routes/api-routes');
 const htmlRouter = require('./routes/html-routes.js');
 
-const PORT = 3000;
+const PORT = process.env || 3000;
 
 const app = express();
 
